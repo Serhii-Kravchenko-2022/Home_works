@@ -27,7 +27,7 @@ def create_birthday_list_dict(names: list, colleague_quantity: int):
         # choice random name from names
         name = choice(names)
         result_list_dict.append({'name': name, "birthday": date})
-    print('result_list_dict', result_list_dict)
+    # print('result_list_dict', result_list_dict)
     return result_list_dict
 
 
