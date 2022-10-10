@@ -18,16 +18,16 @@ class Record:
         self.phones.append(Phone(phone))
 
     def delete_phone(self, phone):
-        phone_obj = Phone(phone)
-        if phone_obj in self.phones:
-            self.phones.remove(phone_obj)
+        for index, phone_obj in enumerate(self.phones):
+            if phone_obj.value == phone:
+                self.phones.remove(phone_obj)
 
-    def change_phone(self, old_phone_number, new_phone_number):
-        phone_obj = Phone(old_phone_number)
-        if phone_obj in self.phones:
-            self.phones[self.phones.index(phone_obj)] = Phone(new_phone_number)
+    def change_phone(self, old_phone, new_phone):
+        for index, phone in enumerate(self.phones):
+            if phone.value == old_phone:
+                self.phones[index] = Phone(new_phone)
 
-
+                
 class Field:
     def __init__(self, value):
         self.value = value
